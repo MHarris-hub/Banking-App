@@ -1,0 +1,38 @@
+
+e
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095|"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095c"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095‰"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095¯"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095Ö"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095î"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095Y"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095¶"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095:"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095¢"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095À"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+•
+java:S1192b"zDefine a constant instead of duplicating this literal "update bank_records.accounts set balance = ? where id = ?" 4 times.(İ³Ì¹ùÿÿÿÿ
+^
+java:S1192?"HDefine a constant instead of duplicating this literal "balance" 5 times.(ŞÁ
+’
+java:S11928"wDefine a constant instead of duplicating this literal "select balance from bank_records.accounts where id = ?" 5 times.(˜æ†ÿÿÿÿÿ
+o
+java:S1192+"YDefine a constant instead of duplicating this literal "Database error occurred." 6 times.(­™À¹
+K
+java:S2200…"/Only the sign of the result should be examined.(œóæìûÿÿÿÿ
+K
+java:S2200«"/Only the sign of the result should be examined.(œóæìûÿÿÿÿ
+W	java:S125Í"<This block of commented-out lines of code should be removed.(Æ„¸ºıÿÿÿÿ
