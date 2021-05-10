@@ -1,6 +1,10 @@
 package com.usfbank.app.main;
 
-import com.usfbank.app.InputValidation;
+import com.usfbank.app.model.Account;
+import com.usfbank.app.model.Employee;
+import com.usfbank.app.service.EmployeeActionsService;
+import com.usfbank.app.service.impl.EmployeeActionsServiceImpl;
+import com.usfbank.app.service.util.InputValidation;
 import com.usfbank.app.exception.AccountException;
 import com.usfbank.app.model.Transaction;
 import com.usfbank.app.service.AccountManagementService;
@@ -9,16 +13,49 @@ import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
     static Scanner scanner = new Scanner(System.in);
-    static Logger logger = Logger.getLogger(Main.class);
+    static Logger logger = Logger.getLogger("console");
 
     public static void main (String[] args) {
         int selection = -1; //determine the selection for the main menu
         AccountManagementService accountManagement = new AccountManagementServiceImpl();
+
+//-----------------TEST CODE---------------------
+
+        //create new account
+//        Account a = new Account();
+//
+//        a.setBalance(new BigDecimal(1000));
+//        a.setApprovalStatus(false);
+
+        //accountManagement.applyForAccount(a);
+
+        //register new employee
+        Employee emp = new Employee();
+        emp.setUsername("emp1");
+        emp.setPassword("pass1");
+        
+        //accountManagement.registerEmployee(emp);
+
+        EmployeeActionsService empServ = new EmployeeActionsServiceImpl();
+
+        //delete pending account
+        //abc.setApproval(3, false);
+
+        //approve account
+        //abc.setApproval(3, true);
+
+//        ArrayList<Account> accList = (ArrayList<Account>) empServ.getPendingAccounts();
+//
+//        logger.info("id" + accList.get(0).getId());
+//        logger.info("balance" + accList.get(0).getBalance());
+
+//--------------------END TEST CODE---------------
 
         logger.info("");
         logger.info("================================================================");
@@ -64,7 +101,7 @@ public class Main {
                         password = scanner.nextLine();
                     } while (!InputValidation.isValidPassword(password));
 
-                    if (accountManagement.login(username, password)) {
+                    if (accountManagement.login(username, password, "customer")) {
                         logger.info("Login successful");
                         logger.info("");
 
@@ -181,7 +218,8 @@ public class Main {
                                 logger.info("Enter the origin account number to search for:");
                                 int id = Integer.parseInt(scanner.nextLine());
 
-                                Transaction.printTransactions(accountManagement.getTransactionLog(id));
+                                //Transaction.printTransactions(accountManagement.getTransactionLog(id));
+                                logger.info(Transaction.printTransactions(accountManagement.getTransactionLog(id)));
                                 break;
                         }
 

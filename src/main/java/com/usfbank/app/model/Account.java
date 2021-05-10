@@ -3,17 +3,22 @@ package com.usfbank.app.model;
 import java.math.BigDecimal;
 
 public class Account {
-    private String username;
-    private String password;
+    private int id;
     private BigDecimal balance;
     private boolean approvalStatus;
 
-    public String getUsername() {
-        return username;
+    public Account(int id, BigDecimal balance, boolean approvalStatus) {
+        this.id = id;
+        this.balance = balance;
+        this.approvalStatus = approvalStatus;
     }
 
-    public String getPassword() {
-        return password;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public BigDecimal getBalance() {
@@ -22,14 +27,6 @@ public class Account {
 
     public boolean approvalStatus() {
         return approvalStatus;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public void setBalance(BigDecimal balance) {

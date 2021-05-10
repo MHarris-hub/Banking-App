@@ -1,0 +1,8 @@
+
+B
+java:S1612",Replace this lambda with a method reference.(©‚ç†
+M	java:S106"9Replace this use of System.out or System.err by a logger.(Õßé\
+N	java:S106"9Replace this use of System.out or System.err by a logger.(·¨µî
+T	java:S106 "9Replace this use of System.out or System.err by a logger.(Õßé\8ñ«‹ıî/
+U	java:S106""9Replace this use of System.out or System.err by a logger.(·¨µî8ó«‹ıî/
+V	java:S125)"<This block of commented-out lines of code should be removed.(˜é™¢˘ˇˇˇˇ

@@ -1,7 +1,5 @@
 package com.usfbank.app.model;
 
-import org.apache.log4j.Logger;
-
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
@@ -13,8 +11,6 @@ public class Transaction {
     private final int toAccount;
     private final int fromAccount;
     private final Timestamp timestamp;
-
-    static Logger logger = Logger.getLogger(Transaction.class);
 
     public Transaction(int id, String type, BigDecimal amount, int toAccount, int fromAccount, Timestamp timestamp) {
         this.id = id;
@@ -49,17 +45,18 @@ public class Transaction {
         return timestamp;
     }
 
-    public static void printTransactions(List<Transaction> transactionList) {
+    public static String printTransactions(List<Transaction> transactionList) {
+        String resultList = "";
 
         for (Transaction transaction : transactionList)
-            logger.info(transaction.getId() + "\t\t\t" +
-                    transaction.getType() + "\t\t\t" +
-                    transaction.getAmount() + "\t\t\t" +
-                    transaction.getFromAccount() + "\t\t\t" +
-                    transaction.getToAccount() + "\t\t\t" +
-                    transaction.getTimestamp()
-            );
+            resultList +=
+                transaction.getId() + ", " +
+                transaction.getType() + ", " +
+                transaction.getAmount() + ", " +
+                transaction.getFromAccount() + ", " +
+                transaction.getToAccount() + ", " +
+                transaction.getTimestamp() + '\n';
 
-        logger.info("");
+        return resultList;
     }
 }

@@ -1,24 +1,37 @@
 
-n
-java:S1301³"KReplace this "switch" statement by "if" statements to increase readability.(²“‘±ÿÿÿÿÿ8ÄÀí©‘/
+g
+java:S1301Ø"KReplace this "switch" statement by "if" statements to increase readability.(²“‘±ÿÿÿÿÿ
 ^
-java:S1192#"HDefine a constant instead of duplicating this literal "0) Exit" 3 times.(Ş‚´
-}
-java:S1192q"bDefine a constant instead of duplicating this literal "Invalid account number or amount." 3 times.(½†ŸÑúÿÿÿÿ
+java:S1192H"HDefine a constant instead of duplicating this literal "0) Exit" 3 times.(Ş‚´
+~
+java:S1192–"bDefine a constant instead of duplicating this literal "Invalid account number or amount." 3 times.(½†ŸÑúÿÿÿÿ
 {
-java:S11923"`Define a constant instead of duplicating this literal "===============================" 6 times.(Á¼½ûÿÿÿÿ
-m
-java:S1192]"RDefine a constant instead of duplicating this literal "Enter account id:" 3 times.(©­Éìıÿÿÿÿ
-d
-java:S1192c"NDefine a constant instead of duplicating this literal "Invalid input" 4 times.(«´‘
-P
-java:S1141n"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-P
-java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+java:S1192X"`Define a constant instead of duplicating this literal "===============================" 6 times.(Á¼½ûÿÿÿÿ
+n
+java:S1192‚"RDefine a constant instead of duplicating this literal "Enter account id:" 3 times.(©­Éìıÿÿÿÿ
+e
+java:S1192ˆ"NDefine a constant instead of duplicating this literal "Invalid input" 4 times.(«´‘
 Q
 java:S1141“"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q
+java:S1141¤"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q
+java:S1141¸"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+]
+java:S1854-";Remove this useless assignment to local variable "empServ".(®Ãµúÿÿÿÿ8“ä’ò”/
 h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 78 to the 15 allowed.(Çµí‘
-7	java:S131-""Add a default case to this switch.(Î‡›ó
-<	java:S131Z""Add a default case to this switch.(²“‘±ÿÿÿÿÿ
-=	java:S131³""Add a default case to this switch.(²“‘±ÿÿÿÿÿ
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 78 to the 15 allowed.(Çµí‘
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÕÔ±µ
+Q	java:S125$"<This block of commented-out lines of code should be removed.(–å²¬
+V	java:S125+"<This block of commented-out lines of code should be removed.(ğÆîúÿÿÿÿÿ
+V	java:S1250"<This block of commented-out lines of code should be removed.(Ùï³»úÿÿÿÿ
+Q	java:S1253"<This block of commented-out lines of code should be removed.(ë®‘¾
+]	java:S1255"<This block of commented-out lines of code should be removed.(Íú…®ıÿÿÿÿ8•ä’ò”/
+7	java:S131R""Add a default case to this switch.(Î‡›ó
+<	java:S131""Add a default case to this switch.(²“‘±ÿÿÿÿÿ
+=	java:S131Ø""Add a default case to this switch.(²“‘±ÿÿÿÿÿ
+W	java:S125İ"<This block of commented-out lines of code should be removed.( ¸ò×ûÿÿÿÿ
+N
+java:S1481-",Remove this unused "empServ" local variable.(®Ãµúÿÿÿÿ8›ä’ò”/

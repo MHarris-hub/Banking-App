@@ -1,13 +1,14 @@
 package com.usfbank.app.dao.impl;
 
-import com.usfbank.app.InputValidation;
+import com.usfbank.app.model.Employee;
+import com.usfbank.app.service.util.InputValidation;
 import com.usfbank.app.dao.AccountManagementDAO;
 import com.usfbank.app.dao.util.PostgreSQLConnection;
 import com.usfbank.app.exception.AccountException;
 import com.usfbank.app.model.Account;
 import com.usfbank.app.model.Transaction;
-import org.apache.log4j.Logger;
 
+import org.apache.log4j.Logger;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.time.Instant;
@@ -15,32 +16,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountManagementDAOImpl implements AccountManagementDAO {
+    static Logger consoleLogger = Logger.getLogger("console");
+    static Logger fileLogger = Logger.getLogger("file");
+    static final String ERROR_MESSAGE = "An error occurred";
+    static final String LOG_MESSAGE = "ClassNotFoundException or SQLException occurred";
 
-    static Logger logger = Logger.getLogger(AccountManagementDAOImpl.class);
-
+    //userType is a String instead of a boolean in case new types of users are added in the future
     @Override
-    public boolean login(String username, String password) {
+    public boolean login(String username, String password, String userType) {
         PreparedStatement preparedStatement;
         ResultSet resultSet;
 
         try (Connection connection = PostgreSQLConnection.getConnection()) {
-            String sql = "select username, password from bank_records.customers where username = ? and password = ?";
+            String sql;
+
+            if (userType.equals("employee")) {
+                sql = "select username, password from bank_records.employees where username = ? and password = ?";
+            } else {
+                sql = "select username, password from bank_records.customers where username = ? and password = ?";
+            }
 
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
             resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()) {
-                String dbUsername = resultSet.getString("username");
-                String dbPassword = resultSet.getString("password");
-
-                if (dbUsername.equals(username) && dbPassword.equals(password))
-                    return true;
-            }
+            if (resultSet.next())
+                return true;
 
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Database error occurred.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
         }
 
         return false;
@@ -63,15 +69,49 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
                 balance = resultSet.getBigDecimal("balance");
 
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Database error occurred.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
         }
 
         return balance;
     }
 
     @Override
+    public void registerEmployee(Employee employee) {
+        PreparedStatement preparedStatement;
+
+        try (Connection connection = PostgreSQLConnection.getConnection()) {
+            String sql = "insert into bank_records.employees(username, password) values(?, ?)";
+
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, employee.getUsername());
+            preparedStatement.setString(2, employee.getPassword());
+
+            preparedStatement.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
+        }
+    }
+
+    @Override
     public void applyForAccount(Account account) {
-        //to be implemented
+        PreparedStatement preparedStatement;
+
+        try (Connection connection = PostgreSQLConnection.getConnection()) {
+            String sql = "insert into bank_records.accounts(balance, approval_status) values(?, ?)";
+
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setBigDecimal(1, account.getBalance());
+            preparedStatement.setBoolean(2, account.approvalStatus());
+
+            preparedStatement.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException e) {
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
+        }
     }
 
     @Override
@@ -80,8 +120,10 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         ResultSet resultSet;
         BigDecimal balance = new BigDecimal(0);
 
-        if (!InputValidation.isValidAmount(amount))
+        if (!InputValidation.isValidAmount(amount)) {
+            fileLogger.warn("Negative deposit attempted - {Account ID: " + accountID + ", Amount " + amount + "}");
             throw new AccountException();
+        }
 
         try (Connection connection = PostgreSQLConnection.getConnection()) {
             String sql = "select balance from bank_records.accounts where id = ?";
@@ -103,10 +145,9 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
 
             generateLog("deposit", amount, -1, accountID);
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Database error occurred.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
         }
-
-
     }
 
     @Override
@@ -115,8 +156,10 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         ResultSet resultSet;
         BigDecimal balance = new BigDecimal(0);
 
-        if (!InputValidation.isValidAmount(amount))
+        if (!InputValidation.isValidAmount(amount)) {
+            fileLogger.warn("Negative deposit attempted - {Account ID: " + accountID + ", Amount " + amount.toString() + "}");
             throw new AccountException();
+        }
 
         try (Connection connection = PostgreSQLConnection.getConnection()) {
             String sql = "select balance from bank_records.accounts where id = ?";
@@ -130,8 +173,10 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
                 balance = balance.subtract(amount);
             }
 
-            if (balance.compareTo(new BigDecimal(0)) == -1)
+            if (balance.compareTo(new BigDecimal(0)) == -1) {
+                fileLogger.warn("Withdrawal would result in negative balance - {Account ID: " + accountID + ", Amount " + amount + "}");
                 throw new AccountException();
+            }
 
             sql = "update bank_records.accounts set balance = ? where id = ?";
             preparedStatement = connection.prepareStatement(sql);
@@ -141,7 +186,8 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
 
             generateLog("withdrawal", amount, accountID, -1);
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Database error occurred.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
         }
     }
 
@@ -151,8 +197,10 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         ResultSet resultSet;
         BigDecimal balance = new BigDecimal(0);
 
-        if (!InputValidation.isValidAmount(amount))
+        if (!InputValidation.isValidAmount(amount)) {
+            fileLogger.warn("Negative transfer attempted - {Account ID: " + fromAccountID + ", Amount " + amount.toString() + "}");
             throw new AccountException();
+        }
 
         //withdraw from fromAccount
         //if withdraw throws an AccountException, money is not deposited into other account
@@ -168,8 +216,10 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
                 balance = balance.subtract(amount);
             }
 
-            if (balance.compareTo(new BigDecimal(0)) == -1)
+            if (balance.compareTo(new BigDecimal(0)) == -1) {
+                fileLogger.warn("Transfer would result in negative balance - {Account ID: " + fromAccountID + ", Amount " + amount + "}");
                 throw new AccountException();
+            }
 
             sql = "update bank_records.accounts set balance = ? where id = ?";
             preparedStatement = connection.prepareStatement(sql);
@@ -196,13 +246,14 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
 
             generateLog("transfer", amount, fromAccountID, toAccountID);
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Database error occurred.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
         }
     }
 
     //1) as more logging methods are added, they will all be moved to a separate logging class to reduce the size of
     // AccountManagementDAOImpl
-    //2) need to validate that accounts numbers exist before logging a phantom transaction with their numbers;
+    //2) need to validate that accounts numbers exist before logging a phantom transaction with their numbers
     // maybe that should be done in the withdraw, deposit and transfer
 
     //commit transaction log to database
@@ -222,12 +273,13 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
             preparedStatement.executeUpdate();
 
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Could not log transaction.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error("Could not log transaction");
         }
     }
 
     @Override
-    public List<Transaction> getTransactionLog(int accountID) {
+    public List<Transaction> getTransactionLogByID(int accountID) {
         PreparedStatement preparedStatement;
         List<Transaction> transactionList = new ArrayList<>();
         ResultSet resultSet;
@@ -251,7 +303,8 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
             }
 
         } catch (ClassNotFoundException | SQLException e) {
-            logger.info("Database error occurred.");
+            consoleLogger.info(ERROR_MESSAGE);
+            fileLogger.error(LOG_MESSAGE);
         }
 
         return transactionList;
