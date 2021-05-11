@@ -30,11 +30,10 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         try (Connection connection = PostgreSQLConnection.getConnection()) {
             String sql;
 
-            if (userType.equals("employee")) {
+            if (userType.equals("employee"))
                 sql = "select username, password from bank_records.employees where username = ? and password = ?";
-            } else {
+            else
                 sql = "select username, password from bank_records.customers where username = ? and password = ?";
-            }
 
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
@@ -285,10 +284,11 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         ResultSet resultSet;
 
         try (Connection connection = PostgreSQLConnection.getConnection()) {
-            String sql = "select id, transaction_type, amount, from_account, to_account, timestamp from bank_records.transactions where from_account = ?";
+            String sql = "select id, transaction_type, amount, from_account, to_account, timestamp from bank_records.transactions where from_account = ? or to_account = ?";
 
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, accountID);
+            preparedStatement.setInt(2, accountID);
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {

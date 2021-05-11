@@ -2,9 +2,12 @@ package com.usfbank.app.presentation;
 
 import com.usfbank.app.model.Customer;
 import com.usfbank.app.model.Employee;
+import com.usfbank.app.model.Transaction;
 import com.usfbank.app.service.AccountManagementService;
 import com.usfbank.app.service.impl.AccountManagementServiceImpl;
 import io.javalin.Javalin;
+
+import java.util.List;
 
 public class Server {
     public static void main(String[] args) {
@@ -17,6 +20,7 @@ public class Server {
 
             if (accountManagement.login(customer.getUsername(), customer.getPassword(), "customer")) {
                 System.out.println("login success");
+
             } else {
                 System.out.println("login failure");
             }
@@ -36,6 +40,33 @@ public class Server {
 
            ctx.json(employee);
        });
+
+        //transaction search by id
+        app.get("/employee-dash/:accountid", ctx -> {
+            List<Transaction> transactions;
+            int accountid = Integer.parseInt(ctx.pathParam("accountid"));
+
+            transactions = accountManagement.getTransactionLogByID(accountid);
+
+            ctx.json(transactions);
+        });
+
+//        //view users transactions
+//        //(username, password, accountID)
+//        app.get("/transactions/*/*/*",ctx -> {
+//            try{
+//                user user = logic.login(ctx.splat(0), ctx.splat(1));
+//                if (user == null) throw new BadLogin();
+//                ctx.json(logic.transactionsFromAccount(user, Integer.parseInt(ctx.splat(2))));
+//            }
+//            catch (BadLogin e){
+//                ctx.status(400);
+//            }catch (NumberFormatException e){
+//                ctx.status(400);
+//            }catch (BusinessException e){
+//                ctx.status(500);
+//            }
+//        });
 
         //service = accountManagement
 //        app.post("/employee", ctx -> {

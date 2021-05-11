@@ -16,5 +16,5 @@ public interface AccountManagementService {
     void deposit(int accountID, BigDecimal amount) throws AccountException;
     void withdraw(int accountID, BigDecimal amount) throws AccountException;
     void transfer(int fromAccountID, int toAccountID, BigDecimal amount) throws AccountException;
-    List<Transaction> getTransactionLog(int accountID);
+    List<Transaction> getTransactionLogByID(int accountID);
 }

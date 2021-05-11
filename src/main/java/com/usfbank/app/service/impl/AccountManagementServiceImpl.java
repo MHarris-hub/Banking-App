@@ -57,7 +57,7 @@ public class AccountManagementServiceImpl implements AccountManagementService {
     }
 
     @Override
-    public List<Transaction> getTransactionLog(int accountID) {
+    public List<Transaction> getTransactionLogByID(int accountID) {
         return accountManagement.getTransactionLogByID(accountID);
     }
 }

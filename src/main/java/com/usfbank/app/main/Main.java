@@ -1,6 +1,5 @@
 package com.usfbank.app.main;
 
-import com.usfbank.app.model.Account;
 import com.usfbank.app.model.Employee;
 import com.usfbank.app.service.EmployeeActionsService;
 import com.usfbank.app.service.impl.EmployeeActionsServiceImpl;
@@ -13,8 +12,6 @@ import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -26,6 +23,8 @@ public class Main {
         AccountManagementService accountManagement = new AccountManagementServiceImpl();
 
 //-----------------TEST CODE---------------------
+        System.out.println("transactions");
+        accountManagement.getTransactionLogByID(-1);
 
         //create new account
 //        Account a = new Account();
@@ -44,6 +43,8 @@ public class Main {
 
         EmployeeActionsService empServ = new EmployeeActionsServiceImpl();
 
+
+
         //delete pending account
         //abc.setApproval(3, false);
 
@@ -54,6 +55,8 @@ public class Main {
 //
 //        logger.info("id" + accList.get(0).getId());
 //        logger.info("balance" + accList.get(0).getBalance());
+
+
 
 //--------------------END TEST CODE---------------
 
@@ -219,7 +222,7 @@ public class Main {
                                 int id = Integer.parseInt(scanner.nextLine());
 
                                 //Transaction.printTransactions(accountManagement.getTransactionLog(id));
-                                logger.info(Transaction.printTransactions(accountManagement.getTransactionLog(id)));
+                                logger.info(Transaction.printTransactions(accountManagement.getTransactionLogByID(id)));
                                 break;
                         }
 

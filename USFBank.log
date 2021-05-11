@@ -4,3 +4,14 @@
 {INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 08-May-21 Saturday EDT 21:27:17: Login failure for user: emp 
 {INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 08-May-21 Saturday EDT 21:28:40: Login failure for user: emp 
 {INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 08-May-21 Saturday EDT 21:54:31: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 09-May-21 Sunday EDT 22:13:24: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 10-May-21 Monday EDT 00:33:01: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 10-May-21 Monday EDT 00:36:39: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 10-May-21 Monday EDT 00:38:29: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 10-May-21 Monday EDT 00:42:33: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 11-May-21 Tuesday EDT 00:11:03: Login success for user: J123 
+{ERROR} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 11-May-21 Tuesday EDT 00:31:19: ClassNotFoundException or SQLException occurred 
+{ERROR} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 11-May-21 Tuesday EDT 00:31:21: ClassNotFoundException or SQLException occurred 
+{ERROR} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 11-May-21 Tuesday EDT 00:31:22: ClassNotFoundException or SQLException occurred 
+{ERROR} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 11-May-21 Tuesday EDT 00:31:26: ClassNotFoundException or SQLException occurred 
+{ERROR} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 11-May-21 Tuesday EDT 00:31:28: ClassNotFoundException or SQLException occurred 
