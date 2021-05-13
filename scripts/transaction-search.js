@@ -4,12 +4,11 @@ submit.addEventListener("click", () => {
      let url = "http://localhost:9000/employee-dash/" + accountid;
      
      fetch(url)
-
-         .then(res => res.json())
-         .then(res1 => {             
+         .then(res1 => res1.json())
+         .then(res2 => {             
                let data = "<table class='table table-bordered table-striped'><thead class='thead-dark'><tr><th>Transaction ID</th><th>Transaction Type</th><th>Amount</th><th>To Account</th><th>From Account</th></thead>";
              
-             res1.forEach(element => {
+             res2.forEach(element => {
                  data = data + "<tr><td>" + element.id + "</td>"
                  data = data + "<td>" + element.type + "</td>"
                  data = data + "<td>" + element.amount + "</td>"
@@ -20,4 +19,4 @@ submit.addEventListener("click", () => {
              data = data + "</table>"
              document.getElementById("results").innerHTML = data;
          });
- })
+})

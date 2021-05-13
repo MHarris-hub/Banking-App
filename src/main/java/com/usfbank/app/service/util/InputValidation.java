@@ -15,6 +15,9 @@ public final class InputValidation {
 
     //determines if the given amount is valid for deposits, withdrawals, and transfers
     public static boolean isValidAmount(BigDecimal amount) {
-        return amount.compareTo(new BigDecimal(0)) == 1;
+        if (amount != null)
+            return amount.compareTo(new BigDecimal(0)) == 1;
+
+        return false;
     }
 }

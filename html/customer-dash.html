@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+          <title>USF Bank Customer Dashboard</title>
+     </head>
+     <body>
+          <h1>USF Bank Customer Dashboard</h1>
+          <h4>Customer Actions:</h4>
+          <br>
+          <select name = "dropdown">
+          <option value = "getbalancedd" selected>Get Balance</option>
+          <option value = "depositdd">Deposit Money</option>
+          <option value = "withdrawdd">Withdraw Money</option>
+          <option value = "trasnferdd">Transfer money</option>
+          </select>
+          <br>
+          <br>
+          <br>
+          <input type="text" id="fromaccountid" placeholder="From account id#"> <input type="text" id="toaccountid" placeholder="To account id#">
+          <br>
+          <button id="getbalancebtn">Get Balance</button>
+          <br><br>
+          <input type="text" id="deposit" placeholder="Enter deposit amount">
+          <br>
+          <button id="depositbtn">Deposit</button> <div id="deposit-message" hidden></div>
+          
+          <br><br>
+          <input type="text" id="withdraw" placeholder="Enter withdrawal amount">
+          <br>
+          <button id="withdrawbtn">Withdraw</button>
+          <br><br>
+          <input type="text" id="transfer" placeholder="Enter transfer amount">
+          <br>
+          <button id="transferbtn">Transfer</button>
+          <br><br><br>
+
+          <div class="container" id="results"></div>
+
+          <script src="/banking-app/scripts/customer-dash.js"></script>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     </body>
+</html>

@@ -156,7 +156,7 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         BigDecimal balance = new BigDecimal(0);
 
         if (!InputValidation.isValidAmount(amount)) {
-            fileLogger.warn("Negative deposit attempted - {Account ID: " + accountID + ", Amount " + amount.toString() + "}");
+            fileLogger.warn("Negative deposit attempted - {Account ID: " + accountID + ", Amount: " + amount + "}");
             throw new AccountException();
         }
 
@@ -197,7 +197,7 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
         BigDecimal balance = new BigDecimal(0);
 
         if (!InputValidation.isValidAmount(amount)) {
-            fileLogger.warn("Negative transfer attempted - {Account ID: " + fromAccountID + ", Amount " + amount.toString() + "}");
+            fileLogger.warn("Negative transfer attempted - {Account ID: " + fromAccountID + ", Amount: " + amount + "}");
             throw new AccountException();
         }
 
@@ -216,7 +216,7 @@ public class AccountManagementDAOImpl implements AccountManagementDAO {
             }
 
             if (balance.compareTo(new BigDecimal(0)) == -1) {
-                fileLogger.warn("Transfer would result in negative balance - {Account ID: " + fromAccountID + ", Amount " + amount + "}");
+                fileLogger.warn("Transfer would result in negative balance - {Account ID: " + fromAccountID + ", Amount: " + amount + "}");
                 throw new AccountException();
             }
 

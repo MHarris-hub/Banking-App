@@ -13,4 +13,6 @@ login.addEventListener("click", () => {
 	},
 })
 .then((response) => response.json());
+// document.getElementById("username").value = "";
+// document.getElementById("password").value = "";
 })
