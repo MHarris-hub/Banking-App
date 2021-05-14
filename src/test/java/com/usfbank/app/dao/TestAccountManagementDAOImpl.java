@@ -67,6 +67,7 @@ class TestAccountManagementDAOImpl {
         //verify mock deposit was made
         verify(daoMock).deposit(1, new BigDecimal(234));
 
+        //TODO working on this section - not performing as expected
 //      //set behavior for attempted negative deposits
 //      doThrow(AccountException.class).when(daoMock.deposit(1, new BigDecimal(-234)));
 //

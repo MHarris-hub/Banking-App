@@ -213,3 +213,6 @@
 {INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 14-May-21 Friday EDT 10:27:43: Login failure for user: emp 
 {INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 14-May-21 Friday EDT 10:27:43: Login failure for user: hello 
 {INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 14-May-21 Friday EDT 10:27:43: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 14-May-21 Friday EDT 10:39:27: Login failure for user: H123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 14-May-21 Friday EDT 10:39:32: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 14-May-21 Friday EDT 10:42:02: Login success for user: emp 
