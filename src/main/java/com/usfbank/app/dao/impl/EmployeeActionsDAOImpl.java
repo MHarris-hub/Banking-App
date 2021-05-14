@@ -63,8 +63,7 @@ public class EmployeeActionsDAOImpl implements EmployeeActionsDAO {
             while (resultSet.next()) {
                 accountList.add(new Account(
                         resultSet.getInt("id"),
-                        resultSet.getBigDecimal("balance"),
-                        false)
+                        resultSet.getBigDecimal("balance"), false)
                 );
             }
 

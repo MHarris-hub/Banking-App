@@ -56,7 +56,7 @@ public class Server {
             ctx.json(NumberFormat.getCurrencyInstance().format(balance));
         });
 
-        //deposit
+        //customer dashboard functionality (deposit, withdraw, transfer)
         app.post("/customer-dash/", ctx -> {
             JSONObject json = new JSONObject(ctx.body());
             String message = "";

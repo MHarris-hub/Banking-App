@@ -68,10 +68,10 @@ document.getElementById("fromaccountid").value = "";
 document.getElementById("withdraw").value = "";
 })
 
-//withdraw from account
+//transfer funds
 transferbtn.addEventListener("click", () => {
 	let url = "http://localhost:9000/customer-dash";
-     document.getElementById("withdraw-message").hidden = true;
+     document.getElementById("transfer-message").hidden = true;
 
 	fetch(url, {
           method: 'POST',

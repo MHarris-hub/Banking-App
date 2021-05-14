@@ -67,11 +67,11 @@ class TestAccountManagementDAOImpl {
         //verify mock deposit was made
         verify(daoMock).deposit(1, new BigDecimal(234));
 
-        //set behavior for attempted negative deposits
-        //doThrow(AccountException.class).when(service.deposit(1, new BigDecimal(-234)));
-
-        //check invalid inputs
-        //assertThrows(AccountException.class, () -> service.deposit(1, new BigDecimal(-234)));
+//      //set behavior for attempted negative deposits
+//      doThrow(AccountException.class).when(daoMock.deposit(1, new BigDecimal(-234)));
+//
+//      //check invalid inputs
+//      assertThrows(AccountException.class, () -> service.deposit(1, new BigDecimal(-234)));
     }
 
     @Test
