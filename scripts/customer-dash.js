@@ -21,7 +21,7 @@ getbalancebtn.addEventListener("click", () => {
 //deposit to account
 depositbtn.addEventListener("click", () => {
 	let url = "http://localhost:9000/customer-dash";
-     document.getElementById("depsosit-message").hidden = true;
+     document.getElementById("deposit-message").hidden = true;
 
 	fetch(url, {
           method: 'POST',
