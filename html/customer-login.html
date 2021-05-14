@@ -10,18 +10,31 @@
 </head>
 
 <body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+
+               </ul>
+          </div>
+     </nav>
+
     <h1>USF Bank Customer Login</h1>
     <div class="container" id="results"></div>
 
     <label>Username</label>
+    <br>
     <input type="text" id="username">
     <br><br>
     <label>Password</label>
+    <br>
     <input type="password" id="password">
     <br>
-    <div id="failed-login-message" hidden>Username/password not found</div>
+    <div id="failed-login-message" class="text-danger" hidden>Username/password not found</div>
     <br>
-    <button id="login">Login</button> <a href="url">New user?</a>
+    <button id="login" class="btn btn-primary">Login</button> <a href="">New user?</a>
     
     <script src="/banking-app/scripts/customer-login.js"></script>
 

@@ -10,20 +10,32 @@
 </head>
 
 <body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+               </li>
+               </ul>
+          </div>
+     </nav>
     <h1>USF Bank Employee Dashboard</h1>
 
-    <label>Search transactions:</label>
+    <h4>Search transactions:</h4>
     <br>
     <label>By name</label>
+    <br>
     <input type="text" id="customername">
     <br><br>
     <label>By acc#</label>
+    <br>
     <input type="text" id="accountid">
     <br><br>
     <label>By date</label>
+    <br>
     <input type="text" id="date">
     <br><br>
-    <button id="submit">Submit</button>
+    <button id="submit" class="btn btn-warning">Submit</button>
 
     <div class="container" id="results"></div>
     

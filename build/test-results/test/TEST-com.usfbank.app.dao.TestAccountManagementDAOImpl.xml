@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.usfbank.app.dao.TestAccountManagementDAOImpl" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-14T02:18:03" hostname="MICHAEL-DESKTOP" time="0.157">
+  <properties/>
+  <testcase name="testLogin()" classname="com.usfbank.app.dao.TestAccountManagementDAOImpl" time="0.136"/>
+  <testcase name="testWithdraw()" classname="com.usfbank.app.dao.TestAccountManagementDAOImpl" time="0.009"/>
+  <testcase name="testGetBalance()" classname="com.usfbank.app.dao.TestAccountManagementDAOImpl" time="0.005"/>
+  <testcase name="testDeposit()" classname="com.usfbank.app.dao.TestAccountManagementDAOImpl" time="0.002"/>
+  <testcase name="testTransfer()" classname="com.usfbank.app.dao.TestAccountManagementDAOImpl" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -8,34 +8,39 @@
           <title>USF Bank Customer Dashboard</title>
      </head>
      <body>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                         <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    </ul>
+               </div>
+          </nav>
+
           <h1>USF Bank Customer Dashboard</h1>
           <h4>Customer Actions:</h4>
-          <br>
-          <select name = "dropdown">
-          <option value = "getbalancedd" selected>Get Balance</option>
-          <option value = "depositdd">Deposit Money</option>
-          <option value = "withdrawdd">Withdraw Money</option>
-          <option value = "trasnferdd">Transfer money</option>
-          </select>
-          <br>
           <br>
           <br>
           <input type="text" id="fromaccountid" placeholder="From account id#"> <input type="text" id="toaccountid" placeholder="To account id#">
           <br>
-          <button id="getbalancebtn">Get Balance</button>
+          <button id="getbalancebtn" class="btn btn-primary">Get Balance</button>
+          
           <br><br>
           <input type="text" id="deposit" placeholder="Enter deposit amount">
           <br>
-          <button id="depositbtn">Deposit</button> <div id="deposit-message" hidden></div>
+          <button id="depositbtn" class="btn btn-warning">Deposit</button> <div id="deposit-message" class="text-danger" hidden></div>
           
           <br><br>
           <input type="text" id="withdraw" placeholder="Enter withdrawal amount">
           <br>
-          <button id="withdrawbtn">Withdraw</button>
+          <button id="withdrawbtn" class="btn btn-primary">Withdraw</button> <div id="withdraw-message" class="text-danger" hidden></div>
+          
           <br><br>
           <input type="text" id="transfer" placeholder="Enter transfer amount">
           <br>
-          <button id="transferbtn">Transfer</button>
+          <button id="transferbtn" class="btn btn-warning">Transfer</button> <div id="transfer-message" class="text-danger" hidden></div>
           <br><br><br>
 
           <div class="container" id="results"></div>

@@ -1,0 +1,25 @@
+
+g
+java:S1301²"KReplace this "switch" statement by "if" statements to increase readability.(²“‘±ÿÿÿÿÿ
+^
+java:S1192""HDefine a constant instead of duplicating this literal "0) Exit" 3 times.(Ş‚´
+}
+java:S1192p"bDefine a constant instead of duplicating this literal "Invalid account number or amount." 3 times.(½†ŸÑúÿÿÿÿ
+{
+java:S11922"`Define a constant instead of duplicating this literal "===============================" 6 times.(Á¼½ûÿÿÿÿ
+m
+java:S1192\"RDefine a constant instead of duplicating this literal "Enter account id:" 3 times.(©­Éìıÿÿÿÿ
+d
+java:S1192b"NDefine a constant instead of duplicating this literal "Invalid input" 4 times.(«´‘
+P
+java:S1141m"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141~"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+Q
+java:S1141’"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 78 to the 15 allowed.(Çµí‘
+7	java:S131,""Add a default case to this switch.(Î‡›ó
+<	java:S131Y""Add a default case to this switch.(²“‘±ÿÿÿÿÿ
+=	java:S131²""Add a default case to this switch.(²“‘±ÿÿÿÿÿ
+W	java:S125·"<This block of commented-out lines of code should be removed.( ¸ò×ûÿÿÿÿ

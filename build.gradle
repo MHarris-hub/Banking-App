@@ -13,9 +13,13 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 
-    // https://mvnrepository.com/artifact/org.json/json
-    implementation group: 'org.json', name: 'json', version: '20171018'
+    //Mockito - mocking framework
+    testImplementation 'org.mockito:mockito-inline:3.7.7'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.7.7'
 
+    // https://mvnrepository.com/artifact/org.json/json
+    //used to get incoming values from get ctx.body() in the Server class
+    implementation group: 'org.json', name: 'json', version: '20171018'
 
     // https://mvnrepository.com/artifact/io.javalin/javalin
     implementation group: 'io.javalin', name: 'javalin', version: '3.13.6'

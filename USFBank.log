@@ -149,3 +149,46 @@
 {WARN} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 12-May-21 Wednesday EDT 23:03:38: Negative deposit attempted - {Account ID: 1, Amount null} 
 {WARN} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 12-May-21 Wednesday EDT 23:04:06: Negative deposit attempted - {Account ID: 1, Amount null} 
 {WARN} - [com.usfbank.app.dao.impl.AccountManagementDAOImpl] - 12-May-21 Wednesday EDT 23:06:27: Negative deposit attempted - {Account ID: 1, Amount -123} 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:00:10: Login success for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:00:38: Login success for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login success for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login failure for user: hello00 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 17:48:24: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login success for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login failure for user: hello00 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 21:31:44: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login success for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login failure for user: hello00 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:17:54: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login success for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login failure for user: hello00 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login failure for user: hello 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:03: Login failure for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:18:27: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:41:26: Login failure for user:  
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:41:28: Login failure for user:  
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:42:09: Login failure for user:  
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:42:51: Login failure for user:  
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:43:06: Login failure for user:  
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 22:47:37: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 23:15:44: Login success for user: emp 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 23:21:11: Login failure for user: wqerj 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 23:21:21: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 23:23:05: Login failure for user: w;oifh 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 23:23:10: Login success for user: J123 
+{INFO} - [com.usfbank.app.service.impl.AccountManagementServiceImpl] - 13-May-21 Thursday EDT 23:35:36: Login success for user: J123 

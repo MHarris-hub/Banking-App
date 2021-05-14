@@ -15,7 +15,7 @@ import java.util.List;
 import org.json.JSONObject;
 
 public class Server {
-    public static void main(String[] args) {
+    public void start() {
         AccountManagementService accountManagement = new AccountManagementServiceImpl();
         Javalin app = Javalin.create(config->config.enableCorsForAllOrigins()).start(9000);
 
@@ -59,19 +59,54 @@ public class Server {
         //deposit
         app.post("/customer-dash/", ctx -> {
             JSONObject json = new JSONObject(ctx.body());
-            String message = "Deposit successful";
+            String message = "";
 
-            try {
-                int accountID = Integer.parseInt(json.get("accountid").toString());
-                BigDecimal amount = new BigDecimal(json.get("amount").toString());
+            if (json.get("transactiontype").toString().equals("deposit")) {
+                message = "Deposit successful";
 
                 try {
-                    accountManagement.deposit(accountID, amount);
-                } catch (AccountException e) {
-                    message = "Deposit failed";
+                    int accountID = Integer.parseInt(json.get("accountid").toString());
+                    BigDecimal amount = new BigDecimal(json.get("amount").toString());
+
+                    try {
+                        accountManagement.deposit(accountID, amount);
+                    } catch (AccountException e) {
+                        message = "Deposit failed";
+                    }
+                } catch (NumberFormatException e) {
+                    message = "Enter a valid account ID or deposit amount";
                 }
-            } catch (NumberFormatException e) {
-                message = "Enter a valid account ID or deposit amount";
+            } else if (json.get("transactiontype").toString().equals("withdrawal")) {
+                message = "Withdrawal successful";
+
+                try {
+                    int accountID = Integer.parseInt(json.get("accountid").toString());
+                    BigDecimal amount = new BigDecimal(json.get("amount").toString());
+
+                    try {
+                        accountManagement.withdraw(accountID, amount);
+                    } catch (AccountException e) {
+                        message = "Withdrawal failed";
+                    }
+                } catch (NumberFormatException e) {
+                    message = "Enter a valid account ID or deposit amount";
+                }
+            } else if (json.get("transactiontype").toString().equals("transfer")) {
+                message = "Transfer successful";
+
+                try {
+                    int fromAccountID = Integer.parseInt(json.get("fromaccountid").toString());
+                    int toAccountID = Integer.parseInt(json.get("toaccountid").toString());
+                    BigDecimal amount = new BigDecimal(json.get("amount").toString());
+
+                    try {
+                        accountManagement.transfer(fromAccountID, toAccountID, amount);
+                    } catch (AccountException e) {
+                        message = "Transfer failed";
+                    }
+                } catch (NumberFormatException e) {
+                    message = "Enter a valid account ID or deposit amount";
+                }
             }
 
             ctx.json(message);

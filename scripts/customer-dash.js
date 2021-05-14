@@ -16,21 +16,19 @@ getbalancebtn.addEventListener("click", () => {
          });
 
      document.getElementById("fromaccountid").value = "";
-
-     //     if (document.getElementById("depositdd").selected == true)
-     //      alert("selected")
-
 })
 
 //deposit to account
 depositbtn.addEventListener("click", () => {
 	let url = "http://localhost:9000/customer-dash";
+     document.getElementById("depsosit-message").hidden = true;
 
 	fetch(url, {
           method: 'POST',
           body: JSON.stringify({
-               accountid:     document.getElementById('toaccountid').value,
-               amount:        document.getElementById('deposit').value,
+               accountid:          document.getElementById('toaccountid').value,
+               amount:             document.getElementById('deposit').value,
+               transactiontype:    "deposit"
           }),
           headers: {
           'Content-type': 'application/json; charset=UTF-8',
@@ -41,6 +39,58 @@ depositbtn.addEventListener("click", () => {
      document.getElementById("deposit-message").textContent = res2;
      document.getElementById("deposit-message").hidden = false;
 });
-// document.getElementById("toaccountid").value = "";
-// document.getElementById("deposit").value = "";
+document.getElementById("toaccountid").value = "";
+document.getElementById("deposit").value = "";
+})
+
+//withdraw from account
+withdrawbtn.addEventListener("click", () => {
+	let url = "http://localhost:9000/customer-dash";
+     document.getElementById("withdraw-message").hidden = true;
+
+	fetch(url, {
+          method: 'POST',
+          body: JSON.stringify({
+               accountid:          document.getElementById('fromaccountid').value,
+               amount:             document.getElementById('withdraw').value,
+               transactiontype:    "withdrawal"
+          }),
+          headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          },
+     })
+.then((res1) => res1.json())
+.then(res2 => {
+     document.getElementById("withdraw-message").textContent = res2;
+     document.getElementById("withdraw-message").hidden = false;
+});
+document.getElementById("fromaccountid").value = "";
+document.getElementById("withdraw").value = "";
+})
+
+//withdraw from account
+transferbtn.addEventListener("click", () => {
+	let url = "http://localhost:9000/customer-dash";
+     document.getElementById("withdraw-message").hidden = true;
+
+	fetch(url, {
+          method: 'POST',
+          body: JSON.stringify({
+               fromaccountid:      document.getElementById('fromaccountid').value,
+               toaccountid:        document.getElementById('toaccountid').value,
+               amount:             document.getElementById('transfer').value,
+               transactiontype:    "transfer"
+          }),
+          headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          },
+     })
+.then((res1) => res1.json())
+.then(res2 => {
+     document.getElementById("transfer-message").textContent = res2;
+     document.getElementById("transfer-message").hidden = false;
+});
+document.getElementById("fromaccountid").value = "";
+document.getElementById("toaccountid").value = "";
+document.getElementById("transfer").value = "";
 })

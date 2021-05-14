@@ -1,32 +1,32 @@
 
-f
-java:S2095¡"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095µ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095¦"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095Ñ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095ˆ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-e
-java:S2095U"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-e
-java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095ç"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095à"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-f
-java:S2095‚"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
-e
-java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
 e
 java:S2095?"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
 f
 java:S2095Œ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
 f
+java:S2095à"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095¡"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095U"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095&"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+e
+java:S2095h"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095Ñ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095ˆ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095‚"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
 java:S2095ñ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095¦"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095ç"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
+f
+java:S2095µ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÉøÙ´
 –
 java:S1192‹"zDefine a constant instead of duplicating this literal "update bank_records.accounts set balance = ? where id = ?" 4 times.(İ³Ì¹ùÿÿÿÿ
 ^

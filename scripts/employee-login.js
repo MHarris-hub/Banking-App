@@ -12,7 +12,13 @@ login.addEventListener("click", () => {
 	'Content-type': 'application/json; charset=UTF-8',
 	},
 })
-.then((response) => response.json());
-// document.getElementById("username").value = "";
-// document.getElementById("password").value = "";
+.then((res1) => res1.json())
+.then(res2 => {
+     if (res2 == "authentication failure")
+          document.getElementById("failed-login-message").hidden = false;
+     else
+          window.location.href = 'employee-dash.html'
+});
+document.getElementById("username").value = "";
+document.getElementById("password").value = "";
 })
