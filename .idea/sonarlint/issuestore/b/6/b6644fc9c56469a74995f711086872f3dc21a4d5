@@ -1,0 +1,19 @@
+
+b
+java:S1192E"GDefine a constant instead of duplicating this literal "amount" 3 times.(”“Ğùÿÿÿÿ
+f
+java:S1192@"PDefine a constant instead of duplicating this literal "transactiontype" 3 times.(‰ˆşÈ
+`
+java:S1192-"JDefine a constant instead of duplicating this literal "accountid" 4 times.(®Üøš
+†
+java:S1192M"kDefine a constant instead of duplicating this literal "Enter a valid account ID or deposit amount" 3 times.(şùòÌÿÿÿÿÿ
+P
+java:S1141G"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141V"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141f"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+g
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ú¡­,
+B
+java:S1612",Replace this lambda with a method reference.(©â 
